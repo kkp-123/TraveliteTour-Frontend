@@ -25,6 +25,14 @@ export default function BookTour() {
   const userid = logindata?.userid;
   const title = selectedTour.title;
 
+  useEffect(()=>{
+
+     if (!logindata || !logindata?.isLogin) {
+      navigate("/Login");
+      return;
+    }
+  },[])
+
   if (!tourid) {
     return <p className="p-10 text-center">Invalid Tour Selected</p>;
   }
