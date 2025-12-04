@@ -102,6 +102,7 @@ export default function SignIn() {
         console.log("Response from backend:", result); 
         if(result.success)
         {
+          showToast(result.message)
           navigate("/Login")
         }
         if(!result.success)
